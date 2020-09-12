@@ -1,9 +1,10 @@
 import discord
 from discord.utils import get
-from http.server import HTTPServer, CGIHTTPRequestHandler
-server_address = ("", 8000)
-httpd = HTTPServer(server_address, CGIHTTPRequestHandler)
-httpd.serve_forever()
+
+
+
+
+
 client = discord.Client()
 user = discord.User
 guild = discord.Guild
@@ -38,7 +39,7 @@ async def on_member_join(ctx):
             print("Студенту - "+ nameUser + " добавили роль "+buffName)
             
     except: # Если не int то это преподаватель и у него в начале имени нет цифр
-        #print("Новый участник")
+        print("Новый участник")
         #role = discord.utils.get(ctx.guild.roles, name = "Преподаватели") #Получаем id или позицию роли
         #await ctx.add_roles(role) # Команда добавления роли | ctx(Member) контекст
         #print("Преподаватель - "+ nameUser + " добавлен")
@@ -76,4 +77,8 @@ roles = { # Просто пусть будет вдруг пригодится
 }
 
 client.run('NjkyNjM2MTUwMTYyMjYwMDc5.XnxZrg.X7H6yCs5tDtZ73LqvZgQ_uzczus')
-input("Для выхода Enter")
+from http.server import HTTPServer, CGIHTTPRequestHandler
+server_address = ("", 8000)
+httpd = HTTPServer(server_address, CGIHTTPRequestHandler)
+httpd.serve_forever()
+
