@@ -10,7 +10,7 @@ result = []
 
 @client.event
 async def on_ready():
-    print('Бот зашел: {0.user}'.format(client))
+   # print('Бот зашел: {0.user}'.format(client))
     
 
 
@@ -32,10 +32,10 @@ async def on_member_join(ctx):
             #print(roles[buffName])
             role = discord.utils.get(ctx.guild.roles, name = buffName + " группа") 
             await ctx.add_roles(role)
-            print("Студенту - "+ nameUser + " добавили роль "+buffName)
+           # print("Студенту - "+ nameUser + " добавили роль "+buffName)
             
     except: # Если не int то это преподаватель и у него в начале имени нет цифр
-        print("Новый участник")
+        #print("Новый участник")
         #role = discord.utils.get(ctx.guild.roles, name = "Преподаватели") #Получаем id или позицию роли
         #await ctx.add_roles(role) # Команда добавления роли | ctx(Member) контекст
         #print("Преподаватель - "+ nameUser + " добавлен")
