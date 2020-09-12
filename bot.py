@@ -1,6 +1,9 @@
 import discord
 from discord.utils import get
-
+from http.server import HTTPServer, CGIHTTPRequestHandler
+server_address = ("", 8000)
+httpd = HTTPServer(server_address, CGIHTTPRequestHandler)
+httpd.serve_forever()
 client = discord.Client()
 user = discord.User
 guild = discord.Guild
@@ -10,12 +13,12 @@ result = []
 
 @client.event
 async def on_ready():
-   # print('Бот зашел: {0.user}'.format(client))
+    print('Бот зашел: {0.user}'.format(client))
     
 
 
 @client.event
-async def on_message(message):rheh
+async def on_message(message):
     if message.author == client.user:
         return
     
@@ -32,7 +35,7 @@ async def on_member_join(ctx):
             #print(roles[buffName])
             role = discord.utils.get(ctx.guild.roles, name = buffName + " группа") 
             await ctx.add_roles(role)
-           # print("Студенту - "+ nameUser + " добавили роль "+buffName)
+            print("Студенту - "+ nameUser + " добавили роль "+buffName)
             
     except: # Если не int то это преподаватель и у него в начале имени нет цифр
         #print("Новый участник")
