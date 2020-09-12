@@ -77,8 +77,4 @@ roles = { # Просто пусть будет вдруг пригодится
 }
 
 client.run('NjkyNjM2MTUwMTYyMjYwMDc5.XnxZrg.X7H6yCs5tDtZ73LqvZgQ_uzczus')
-from http.server import HTTPServer, CGIHTTPRequestHandler
-server_address = ("", 8000)
-httpd = HTTPServer(server_address, CGIHTTPRequestHandler)
-httpd.serve_forever()
 
